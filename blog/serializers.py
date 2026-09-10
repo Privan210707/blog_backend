@@ -29,3 +29,9 @@ class SignupSerializer(serializers.ModelSerializer):
         )
 
         return user
+
+class ProfileSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = ['user', 'bio', 'profile_picture']
+        read_only_fields = ['user']
